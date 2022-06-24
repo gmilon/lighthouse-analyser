@@ -1,9 +1,9 @@
-import dotenv from 'dotenv'
-dotenv.config()
+import {config} from 'dotenv'
+config()
 
 export default {
     baseUrl: process.env.BASE_URL, // ex: https://google.com
-    pages: process.env.PATHS, // should be comma separated values
+    pages: process.env.PATHS.split(','), // should be comma separated values
     lighthouse: {
         onlyCategories: [
             'performance',
@@ -12,6 +12,6 @@ export default {
             'accessibility',
         ],
         output: 'json',
-        logLevel: 'error',
+        logLevel: 'info',
     }
 }

@@ -1,6 +1,6 @@
 import lighthouse from 'lighthouse'
-import chromeLauncher from 'chrome-launcher'
-import config from '../config.js'
+import {launch} from 'chrome-launcher'
+import config from '../config'
 
 function getPageTotalScore(results) {
     return ((results?.seo?.score || 0)
@@ -11,7 +11,7 @@ function getPageTotalScore(results) {
 
 
 async function getChrome() {
-    return await chromeLauncher.launch({chromeFlags: ['--headless']});
+    return await launch({chromeFlags: ['--headless']});
 }
 
 async function getLightHouseResult(chrome, path) {
