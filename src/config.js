@@ -1,6 +1,8 @@
+import dotenv from 'dotenv'
+dotenv.config()
 export default {
     baseUrl: process.env.BASE_URL,
-    pages: [],
+    pages: process.env.PATHS,
     lighthouse: {
         onlyCategories: [
             'performance',
