@@ -1,8 +1,9 @@
 import dotenv from 'dotenv'
 dotenv.config()
+
 export default {
-    baseUrl: process.env.BASE_URL,
-    pages: process.env.PATHS,
+    baseUrl: process.env.BASE_URL, // ex: https://google.com
+    pages: process.env.PATHS, // should be comma separated values
     lighthouse: {
         onlyCategories: [
             'performance',
