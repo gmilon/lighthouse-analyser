@@ -12,6 +12,6 @@ export default {
             'accessibility',
         ],
         output: 'json',
-        logLevel: 'info',
+        logLevel: 'error',
     }
 }
