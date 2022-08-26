@@ -1,11 +1,14 @@
 #!/usr/bin/env ts-node
-import {getAllLighthouseScore} from "./lighthouse";
+import { saveResultToGoogleSheet } from "./googleSheet";
+import { getAllLighthouseScore } from "./lighthouse";
 
 function main() {
-    getAllLighthouseScore().then((res) => {
-        console.log(res)
-        console.log('DONE')
-    })
+  getAllLighthouseScore().then((res) => {
+    saveResultToGoogleSheet(res).then((savedData)=>{
+        console.log(res);
+        console.log("DONE");
+    });
+  });
 }
 
-main()
+main();
