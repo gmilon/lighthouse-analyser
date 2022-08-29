@@ -45,11 +45,11 @@ async function generateLighthouseTotalScoreForPage(path) {
     return totalScore
 }
 
-export type AllLighthouse = {
+export type AllLighthouseScore = {
     [key: string]: LighthousePageScore
 }
 
-export async function getAllLighthouseScore(): Promise<AllLighthouse> {
+export async function getAllLighthouseScore(): Promise<AllLighthouseScore> {
     const pages = config.pages
     const allScore = {}
     for (let i = 0; i < pages.length; i++) {
