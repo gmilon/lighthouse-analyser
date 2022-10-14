@@ -12,10 +12,12 @@ env:
 
 jobs:
     generate-lighthouse-score-build:
+      strategy:
+        matrix:
+         page: ["0:10", "10:20"]
       runs-on: ubuntu-latest
       steps:
         - name: Checkout
           uses: actions/checkout@v3
-        - run: echo $GOOGLE_SHEET_ID
         - run: yarn
-        - run: yarn start
+        - run: yarn start ${{matrix.page}}
