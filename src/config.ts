@@ -1,9 +1,10 @@
 import { config } from "dotenv";
+import { siteUrls } from "./urls";
 config();
 
 export default {
-  baseUrl: process.env.BASE_URL, // ex: https://google.com
-  pages: process.env.PATHS.split(","), // should be comma separated values
+  baseUrl: siteUrls.baseUrl, // ex: https://google.com
+  pages: siteUrls.paths, // should be comma separated values
   lighthouse: {
     onlyCategories: ["performance", "seo", "best-practices", "accessibility"],
     output: "json",

@@ -1,6 +1,7 @@
 const { GoogleSpreadsheet } = require("google-spreadsheet");
 import config from "../config";
 import { AllLighthouseScore, LighthousePageScore } from "../lighthouse";
+import { getCurrentDate } from "../utils";
 
 interface GoogleDataFormat extends LighthousePageScore {
   PAGE: string;
@@ -18,6 +19,7 @@ function getFormattedScores(
       BEST_PRACTICE: scores[key]?.bestpractice,
       ACCESSIBILITY: scores[key]?.accessibility,
       TOTAL: scores[key]?.total,
+      DATE: getCurrentDate()
     };
     output.push(data);
   }
