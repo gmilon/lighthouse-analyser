@@ -21,11 +21,6 @@ on:
               export GOOGLE_SHEET_ID=${{ secrets.GOOGLE_SHEET_ID }}
               export GOOGLE_SERVICE_ACCOUNT_EMAIL=${{ secrets.GOOGLE_SERVICE_ACCOUNT_EMAIL }}
               export GOOGLE_PRIVATE_KEY=${{ secrets.GOOGLE_PRIVATE_KEY }}
-              
-              # Use the value of the defined environment variables as an output
-              echo "::set-output name=GOOGLE_SHEET_ID::${GOOGLE_SHEET_ID}"
-              echo "::set-output name=GOOGLE_SERVICE_ACCOUNT_EMAIL::${GOOGLE_SERVICE_ACCOUNT_EMAIL}"
-              echo "::set-output name=GOOGLE_PRIVATE_KEY::${GOOGLE_PRIVATE_KEY}"
             
         - run: yarn
         - run: yarn start
