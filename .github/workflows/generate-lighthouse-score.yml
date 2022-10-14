@@ -1,6 +1,7 @@
 name: generate-lighthouse-score
 
 on:
+  #  Trigger worflow manually
   workflow_dispatch:
   schedule:
     - cron:  '15 * * * *'
@@ -13,6 +14,7 @@ env:
 jobs:
     generate-lighthouse-score-build:
       strategy:
+      #  Creates multiple jobs
         matrix:
          page: ["0:10", "10:20"]
       runs-on: ubuntu-latest

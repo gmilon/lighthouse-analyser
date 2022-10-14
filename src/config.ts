@@ -2,9 +2,18 @@ import { config } from "dotenv";
 import { siteUrls } from "./urls";
 config();
 
+/**
+* *Get the pages based on start and end values from script `yarn start START_INDEX:END_INDEX` 
+* * process.argv - return use the array of script arguments
+*/
+const getPages = () => {
+  const pages = process.argv.at(-1).split(":"); 
+  return siteUrls.paths.slice(pages[String(0)], pages[String(1)]);
+};
+
 export default {
   baseUrl: siteUrls.baseUrl, // ex: https://google.com
-  pages: siteUrls.paths, // should be comma separated values
+  pages: getPages(), // should be comma separated values
   lighthouse: {
     onlyCategories: ["performance", "seo", "best-practices", "accessibility"],
     output: "json",

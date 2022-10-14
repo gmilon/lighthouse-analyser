@@ -7,5 +7,12 @@ export const siteUrls = {
     "/page/express",
     "/page/installment",
     "/page/logistics",
+    "/page/inspection-services",
+    "/page/fulfilled-by-tradeling-seller",
+    "/page/private-label",
+    "/page/cartlow",
+    "/page/faq-list",
+    "/page/contact-us",
+    "/page/refund-policy",
   ],
 };
