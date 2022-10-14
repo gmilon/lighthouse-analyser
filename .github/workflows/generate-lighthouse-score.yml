@@ -1,6 +1,7 @@
 name: generate-lighthouse-score
 
 on:
+  workflow_dispatch:
   schedule:
     - cron:  '15 * * * *'
 
