@@ -16,10 +16,14 @@ function getFormattedScores(
       PAGE: key.toUpperCase(),
       SEO: scores[key]?.seo,
       PERFORMANCE: scores[key]?.performance,
-      BEST_PRACTICE: scores[key]?.bestpractice,
+      BEST_PRACTICE: scores[key]?.bestPractice,
       ACCESSIBILITY: scores[key]?.accessibility,
       TOTAL: scores[key]?.total,
-      DATE: getCurrentDate()
+      "LARGEST CONTENTFUL PAINT (LCP)": scores[key]?.lcp,
+      "FIRST INPUT DELAY (FID)": scores[key]?.fid,
+      "CUMULATIVE LAYOUT SHIFT (CLS)": scores[key]?.cls,
+      "FIRST CONTENTFUL PAINT (FCP)": scores[key]?.fcp,
+      DATE: getCurrentDate(),
     };
     output.push(data);
   }
